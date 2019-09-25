@@ -1,0 +1,477 @@
+#{
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  margin: 0 auto;
+
+}
+/*設定順序  1.尺寸設定  2.位置設定  3.樣式設定  4.其他*/
+
+/*------------------------平板 1024px MEDIA QUERY設定------------------------*/
+@media screen and (max-width:1024px){
+    .main-wrapper .wrapper{
+  grid-template-rows: 700px 800px 900px auto;
+  }
+/*--------nav--------*/
+    .nav-items{
+     grid-column: 1/5;
+  }
+    .logo{
+    text-align: center;
+    grid-column: 1/5;
+    
+  }
+    .wrapper .text{
+     margin-top: 20rem;
+ }
+    
+    
+/*--------主要內容--------*/    
+    .wrapper .name{
+    font-size: 20px;
+    font-family: 微軟正黑體;
+ }
+    .wrapper .engname{
+    font-size: 40px;
+ }
+
+    .wrapper .experience{
+    grid-template-rows: auto 750px;
+ }
+    .wrapper .career{
+    background: url(img/exp2.jpg) no-repeat center center;
+    background-size:100% auto;/*自動縮放背景圖片*/
+}
+
+    .wrapper .career{
+    background-color: white; 
+ }
+
+}
+
+/*------------------------手機 690px MEDIA QUERY設定------------------------*/
+@media screen and (max-width:690px){
+    
+/*--------nav--------*/
+    .nav-wrapper .list{
+    padding-bottom:5px;
+    display: block;
+ }
+    .nav-items{
+    grid-column: 1/5;
+ }
+    .wrapper .text{
+    width: 100%;
+    margin-left: 0;
+ } 
+    
+/*-------page1banner--------*/
+    .main-wrapper .wrapper{
+    grid-template-rows: auto auto 1000px auto;
+ }
+    .wrapper .banner{
+    max-width: 100%;
+    text-align: center;
+    background-color:#F2F2F2;
+ }
+    .wrapper .banner .mypicture{
+    align-self: flex-end;
+    background:url(img/me2.jpg) no-repeat center center;
+ }
+    .wrapper .banner .name{
+    margin: 0 auto;
+    text-align: center;
+    font-size:35px;
+ }
+    .wrapper .banner .engname{
+    padding:1 0px;
+    text-align: center;
+    margin-bottom: 80rem;
+    font-size:35px;
+ }
+    
+/*-------page2關於我--------*/
+    .wrapper .aboutme{
+    align-items: center;
+    grid-template-rows: 1fr 3fr 3fr 3fr;
+ }
+    .wrapper .aboutme .topic1,{
+    height: 100%;
+ }
+    .wrapper .aboutme .basic,.wrapper .aboutme .education, .wrapper .aboutme .personality{
+    height: 100%;
+    margin: 0;
+    grid-column: 1/5;
+ }
+
+/*-------page3個人經歷--------*/
+  .wrapper .experience{
+   grid-template-rows: auto 1000px;
+ }
+   .wrapper .career{
+   background:url(img/exp3.jpg) no-repeat center top; 
+   background-color: white;
+ }
+
+/*-------page4技能和語言能力-------*/
+  .wrapper .topic3{
+  grid-column: 1/5;
+ }
+  .wrapper .skill {
+  grid-template: auto 4fr 4fr 4fr/repeat(4,1fr);
+ }
+ .wrapper .skill{
+ grid-template: repeat(4,1fr)/repeat(4,1fr);
+ }
+ .wrapper .skill1, .wrapper .skill3, .wrapper .skill5{
+ grid-column: 1/3;
+ }
+ .wrapper .skill2, .wrapper .skill4, .wrapper .skill6{
+ grid-column: 3/5;
+ }
+/*-------footer-------*/
+ footer .connection{
+  width: 100%;
+  margin:0 auto;
+  text-align: center;
+ }
+}
+/*------------------------手機 690px MEDIA QUERY結束------------------------*/
+
+
+
+/*---------導覽列設定--------*/
+
+.nav-wrapper{
+    width: 1200px;
+    left: 50%;
+    padding: 10px 20px;
+    margin-left: -620px; /* 1200/2 + padding 20*/
+    margin-top: -10px;
+    position: fixed;
+    text-align: center;
+    display: grid;
+    background-color: #D0D3D4;
+    box-shadow:2px 2px 5px 2px gray; 
+    grid-template-columns: 45% auto;
+    z-index: 1;
+    
+}
+.nav-wrapper ul{
+    align-self: center;
+}
+
+.nav-wrapper ul li{
+    margin-right: 20px;
+    font-size: 16px;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing:5px;
+    list-style-type: none;
+    display: inline;
+}
+
+.nav-wrapper ul a{
+    color: black;
+    text-decoration: none;
+}
+.nav-wrapper ul a:hover{
+    color: gray;
+}
+
+
+.logo{
+    font-family: 'Inder', sans-serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+.logo a{
+    color: black;
+    text-decoration: none;
+}
+
+/*--------------------------wrapper設定-------------------------*/
+
+.main-wrapper{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.wrapper{
+    max-width: 100%;
+    min-height: 950px;
+    margin: auto;
+    display:grid;
+    grid-template-rows:repear(4,1fr);
+    grid-gap: 5px;
+    grid-template-areas:"featuredMain"
+                         "aboutme"
+                         "experience"
+                         "skill";
+}
+
+/*----------------第一頁個人照片----------------------*/
+.banner{
+    background-color: #F2F2F2;
+    display: grid;
+    grid-area: featuredMain;
+    grid-template-columns: 1fr ;
+ }
+
+.name{
+    margin-bottom: 0;
+    text-align:left;
+    font-size: 40px;
+    font-family: 微軟正黑體;
+    letter-spacing: 2rem;
+}
+.engname{
+    margin-top: 0;
+    align-self: center;
+    font-size: 50px;
+    font-family: 'Inder', sans-serif;
+}
+.mypicture{
+    background: url(img/me.jpg) no-repeat center center;
+    background-size: 100% auto;
+}
+.text {
+    margin-top: 30rem;
+    margin-left: 5rem;
+    margin-bottom: auto;
+}
+
+
+/*------------------第二頁關於我------------------*/
+.aboutme{
+    padding: 30px;
+    background-color:#F2F2F2;
+    display: grid;
+    grid-area: aboutme;
+    grid-template: 1fr 12fr / 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+.topic1{
+    text-align: center;
+    align-self: center;
+    color: #333333;
+    font-size: 30px;
+    font-family: 'Noto Sans TC', sans-serif;
+    grid-column: 1 / 5;
+}
+
+/*-----------基本資料------------*/
+.item{
+ color:gray;
+}
+.item2{
+ color:#4D4D4D;
+}
+.basic,.education,.personality{
+    box-shadow:2px 2px 1px 1px lightgray;  
+}
+.basic{
+    height:85%;
+    margin-top: 5%;
+    background-color: #FFFFFF;
+}
+.basic p{
+    width: 60%;
+    margin:0 auto;
+    margin-top: 10%;
+    text-align: center;
+    font-size: 24px;
+    font-family: 微軟正黑體;
+    font-weight: bolder;
+    color:  #4D4D4D;
+    background-color: #F2F2F2;
+}
+.table_1{
+    width: 80%;
+    height: 60%;
+    margin: 0 auto;
+    margin-top: 10%
+}
+.table_1 td{
+    text-align: center;
+    font-size: 18px;
+    font-family: 微軟正黑體;
+    font-weight: 600;
+    border-bottom: 2px solid #F2F2F2;
+}
+
+.education{
+    height:85%;
+    margin-top: 5%;
+    background-color: #FFFFFF;
+}
+
+.education p{
+    width: 60%;
+    margin:0 auto;
+    margin-top: 10%;
+    text-align: center;
+    font-size: 24px;
+    font-family: 微軟正黑體;
+    font-weight: bolder;
+    background-color: #F2F2F2;
+}
+
+.table_2{
+    width: 80%;
+    height: 60%;
+    margin: 0 auto;
+    margin-top: 10%
+}
+.table_2 td{
+    text-align: center;
+    font-size: 18px;
+    font-family: 微軟正黑體;
+    font-weight: 600;
+    border-bottom: 2px solid #F2F2F2;
+
+}
+#university{
+    text-align: left;
+    padding-left: 10%;
+}
+.personality{
+    height:85%;
+    margin-top:5%;
+    background-color:#FFFFFF;
+}
+
+.personality p {
+    width: 60%;
+    margin:0 auto;
+    margin-top: 10%;
+    text-align: center;
+    font-size: 24px;
+    font-family: 微軟正黑體;
+    font-weight: bolder;
+    color:  #4D4D4D;
+    background-color: #F2F2F2;
+}
+.person{
+    font-size: 18px;
+    font-family: 微軟正黑體;
+    font-weight: 600;
+    color: #4D4D4D;
+    list-style-type:square;
+}
+
+.person li{
+    padding-right: 8%;
+    padding-bottom: 3rem;
+}
+
+
+/*----------------個人經歷----------------*/
+.experience{
+    padding: 30px;
+    background-color: #F2F2F2;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    grid-area: experience;
+}
+
+.topic2{
+    margin-top: %;
+    text-align: center;
+    align-self: center;
+}
+.experience div p{
+    color: #333333;
+    font-size: 30px;
+    font-family:'Noto Sans TC', sans-serif;
+}
+.career{
+    width: auto;
+    background: url(img/exp1.jpg) no-repeat center center;
+    background-size:100% auto;/*自動縮放背景圖片*/
+}
+
+/*-----------工作技能--------------*/
+.skill{
+    padding: 30px;
+    background-color: #F2F2F2;
+    display: grid;
+    grid-template: 1fr 2fr 2fr/ repeat(3,1fr);
+    grid-area: skill;
+    grid-gap: 10px;
+}
+.topic3{
+    text-align: center;
+    align-self: center;
+    height: 80%;
+    grid-column: 1 / 4;
+}
+
+.skill1,.skill2,.skill3,.skill4,.skill5,.skill6{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    border-radius: 8%;
+    box-shadow:2px 2px 1px 1px lightgray;
+    position: relative;
+}
+
+.skill{
+    align-items: center;
+}
+.skill img{
+    width: 100%;
+    padding: 0;
+    grid-gap: 0;
+}
+
+
+.title{
+    color: #333333;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 30px;
+}
+/*--------翻牌效果製作--------*/
+.cover{
+    position: absolute;
+    transform: rotateY(0deg);
+    backface-visibility:hidden;
+    transition: transform .25s ease-in-out;
+}
+.skill1:hover .cover, .skill2:hover .cover, .skill3:hover .cover, .skill4:hover .cover, .skill5:hover .cover, .skill6:hover .cover{
+    cursor:pointer;
+    transform: rotateY(180deg);
+}
+
+.back{
+    backface-visibility:hidden;
+    transform: rotateY(-180deg);
+    transition: transform .3s ease-in-out;
+}
+
+.skill1:hover .back, .skill2:hover .back, .skill3:hover .back, .skill4:hover .back, .skill5:hover .back, .skill6:hover .back{
+    cursor:pointer;
+    transform: rotateY(0deg);
+}
+
+/*--------footer配置-----------*/
+footer{
+    margin: auto;
+    max-width: 1200px;
+    height: auto;
+    background-color: #D0D3D4;
+}
+.connection{
+    width: 50%;
+    height: 60%;
+    margin: 0 auto;
+    padding: 1rem;
+    font-size: 12px; 
+    font-family: 微軟正黑體;
+    color: #4D4D4D;
+}
+
+.leftborder{
+    border-left: 1px solid gray;
+    padding-left: 10px;
+}
+
